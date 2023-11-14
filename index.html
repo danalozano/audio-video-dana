@@ -30,6 +30,24 @@
             </span>
         </button>
     </div>
+    <div class="reproductor">
+        <!-- Botó de parar/reiniciar -->
+        <button type="button" onclick="toggleAudio();">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M6 6h12v12H6z"/>
+            </svg>
+        </button>
+
+        <!-- Slider de volum -->
+        <div class="volum-slider">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M7 9v6h4l5 5V4l-5 5H7z"/>
+            </svg>
+            <input type="range" min="0" max="100" value="50" class="slider" id="volumSlider" onchange="changeVolume(this.value);">
+        </div>
+    </div>
     <!-- Recordeu que heu de seguir les lleis en matèria de propietat intelectual.
          En aquest cas, cal nomenar i enllaçar l'autor i el tipus de llicència. 
     -->
@@ -43,6 +61,7 @@
         a CodePen <a rel="nofollow" href="https://codepen.io/tedmcdo/pen/PqxKXg">CSS & SVG Waves Animation</a>
     </div>
     <!-- Cal seleccionar l'element d'àudio. -->
+    
     <script>
         let audio = document.getElementById('player');
 
@@ -55,7 +74,18 @@
                 waves[i].classList.add('playing');
             }
         }
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
 
+        function changeVolume(value) {
+            audio.volume = value / 100;
+        }
     </script>
 </body>
 </html>

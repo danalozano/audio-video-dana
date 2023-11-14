@@ -4,6 +4,7 @@
     height: 250px;
     background: radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
     overflow: hidden;
+
 }
 
 .ocean { 
@@ -32,7 +33,12 @@
     top: -175px;
     opacity: 1;
 }
-  
+.reproductor button {
+  display: flex; /* Agregado */
+  justify-content: space-between; /* Agregado */
+}
+
+
 .wave:nth-of-type(2).playing {
     animation: wave 4s cubic-bezier( 0.40, 0.45, 0.63, 0.45) -.125s infinite, swell 7s ease -1.25s infinite;
 }
