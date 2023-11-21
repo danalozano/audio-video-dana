@@ -1,5 +1,17 @@
 WEBVTT
 
+STYLE
+::cue {
+    color: yellow;
+    background: none; 
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #808080; 
+    border-radius: 10px;
+}
+
 1
 00:00:02.000 --> 00:00:05.000
 Potser una mica de música
